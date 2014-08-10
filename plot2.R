@@ -1,7 +1,9 @@
-setwd("~/Dropbox/Coursera/R codes/04_EDA/Project_1/data")
+setwd("~/Documents/Coursera/04_Exploratory Data Analysis/Projects/ExData_Plotting1")
+
+myfile <- "~/Documents/Coursera/04_Exploratory Data Analysis/Projects/Project_1/data/household_power_consumption.txt"
 
 ## Read Data
-df <- read.table("household_power_consumption.txt", header = T, sep = ";", na.strings ="?",
+df <- read.table(myfile, header = T, sep = ";", na.strings ="?",
                  colClasses = c("character", "character","numeric","numeric",
                                 "numeric","numeric","numeric", "numeric", "numeric"))
 
@@ -15,7 +17,7 @@ rm(df, df1)
 
 # Plot 2 - Line
 
-par(cex = .8)
+par(bg= "transparent", cex = .8)
 
 plot(df2$date_time,df2$Global_active_power, type="n", xlab = "", ylab = "Global Active Power (kilowatts)")
 lines(df2$date_time,df2$Global_active_power, type="l")

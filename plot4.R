@@ -1,7 +1,9 @@
-setwd("~/Dropbox/Coursera/R codes/04_EDA/Project_1")
+setwd("~/Documents/Coursera/04_Exploratory Data Analysis/Projects/ExData_Plotting1")
+
+myfile <- "~/Documents/Coursera/04_Exploratory Data Analysis/Projects/Project_1/data/household_power_consumption.txt"
 
 ## Read Data
-df <- read.table("data/household_power_consumption.txt", header = T, sep = ";", na.strings ="?",
+df <- read.table(myfile, header = T, sep = ";", na.strings ="?",
                  colClasses = c("character", "character","numeric","numeric",
                                 "numeric","numeric","numeric", "numeric", "numeric"))
 
@@ -15,7 +17,7 @@ rm(df, df1)
 
 # Plot 4 - Multi Frame Plots
 
-par(mfrow = c(2,2),  mar = c(4, 4, 2, 1), cex=.7)
+par(mfrow = c(2,2),  mar = c(4, 4, 2, 1), bg= "transparent", cex=.7)
 
 #R1-1
 plot(df2$date_time,df2$Global_active_power, type="n", xlab = "", ylab = "Global Active Power")
